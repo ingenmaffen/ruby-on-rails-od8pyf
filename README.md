@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails application written in Ruby (on Rails) as an assignment for the University of Szeged's Ruby on Rails course.
 
-Things you may want to cover:
+Repository owner: Rabi Róbert (OD8PYF / RARWAAT.SZE / h460168)
 
-* Ruby version
+E-mail: ingenmaffen@gmail.com / h460168@stud.u-szeged.hu
 
-* System dependencies
+# Application information:
 
-* Configuration
+Ruby version: 2.3.1
 
-* Database creation
+Rails version: 2.3.1
 
-* Database initialization
+Database: SQLite3
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Used gems: 
+* 
+*
+*
+*
