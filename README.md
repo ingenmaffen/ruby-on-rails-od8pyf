@@ -10,12 +10,13 @@ E-mail: ingenmaffen@gmail.com / h460168@stud.u-szeged.hu
 
 Ruby version: 2.3.1
 
-Rails version: 2.3.1
+Rails version: 5.1.6
 
 Database: SQLite3
 
 Used gems: 
 * Bootstrap
-* CanCanCan
+* CanCanCan (currently not used)
 * CarrierWave
-* Ransack
+* Ransack (currently not used)
+* Jquery Rails

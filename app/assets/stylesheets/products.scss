@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
+.dropdown {
+  cursor: pointer;
+}
+
 .product-container {
   padding: 5px;
   text-align: center;
@@ -54,6 +58,65 @@
           height: 30px;
         }
       }
+    }
+  }
+}
+
+.product-detail {
+  padding: 5px;
+  text-align: center;
+  position: relative;
+
+  .back {
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    cursor: pointer;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .product {
+    border: 4px solid orange;
+    width: 300px;
+    display: block;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    .product-name {
+      height: 40px;
+    }
+
+
+    .image {
+      width: 200px;
+      height:  200px;
+      margin: 0 auto;
+
+      img {
+        width: 200px;
+        max-height:  200px;
+      }
+
+    }
+
+    .price-container {
+      height: 44px;
+      background-color: orange;
+
+      .price {
+        font-size: 22px;
+        position: absolute;
+        bottom: 12px;
+        right: 40px;
+      }
+
     }
   }
 }
