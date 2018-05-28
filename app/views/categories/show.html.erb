@@ -1,4 +1,59 @@
-<p id="notice"><%= notice %></p>
+<!-- header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/products">Webshop</a>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle dropdown" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% Category.all().each do |category| %>
+            <div class="dropdown-item"><%= link_to category.name, category %></div>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!-- product list -->
+<div class="product-container">
+
+  <p id="notice"><%= notice %></p>
+
+  <% @products = [] %>
+  <% Product.all().each do |prod| %>
+    <% if prod.category_id == @category.id %>
+      <% @products.push(prod) %>
+    <% end %>
+  <% end %>
+
+  <% @products.each do |product| %>
+
+    <div class="product">
+      <h2 class="product-name"><%= product.name %></h2>
+
+      <div class="image">
+        <% if product.images.present? %>
+          <img src= <%= product.images %> />
+        <% else %>
+          <%= image_tag "no_image.png" %>
+        <% end %>
+      </div>
+
+      <div class="price-container">
+
+        <span class="price"><%= product.price %> Ft</span>
+        <span class="open"><%= link_to image_tag("open.svg"), product %></span>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>
