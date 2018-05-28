@@ -1,11 +1,37 @@
+<!-- header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/products">Webshop</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 <div class="product-container">
+
+
   <p id="notice"><%= notice %></p>
 
-  <div class="products-title">Products</div>
-
     <% @products.each do |product| %>
+
     <div class="product">
-      <h2><%= product.name %></h2>
+      <h2 class="product-name"><%= product.name %></h2>
 
       <div class="image">
       <% if product.images.present? %>
@@ -15,14 +41,13 @@
       <% end %>
       </div>
 
-      <div class="price">
-        <%= product.price %> Ft
+      <div class="price-container">
+
+        <span class="price"><%= product.price %> Ft</span>
+        <span class="open"><%= link_to image_tag("open.svg"), product %></span>
       </div>
 
     </div>
+
     <% end %>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
 </div>
