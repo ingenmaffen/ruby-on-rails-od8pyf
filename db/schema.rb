@@ -10,14 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528082032) do
+ActiveRecord::Schema.define(version: 20180528104030) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_categories_on_product_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.string "path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
