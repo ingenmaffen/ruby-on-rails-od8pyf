@@ -1,4 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<h2>
+  <%= @product.name %>
+</h2>
+
+<strong style="white-space: pre-line;">
+  <%= @product.description %>
+</strong>
+
+<p style="white-space: pre-line;">
+  <%= @product.price %>
+</p>
+
+<img src= <%= @product.images %> />
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

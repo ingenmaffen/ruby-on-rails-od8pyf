@@ -11,11 +11,22 @@
 
   <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div style="margin: 5px; padding: 5px; background-color: #E6E6E6; position: relative;">
+      <h2><%= product.name %></h2>
+      <strong style="white-space: pre-line;">
+        <%= product.description %>
+      </strong>
+
+      <p style="white-space: pre-line;">
+        <%= product.price %> Ft
+      </p>
+      <img src= <%= product.images %> />
+      <span style="position: absolute; top: 0; right: 0;">
+        <span><%= link_to 'Open product', product %></span>
+        <span><%= link_to 'Edit product', edit_product_path(product) %></span>
+        <span><%= link_to 'Delete product', product, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </span>
+    </div>
     <% end %>
   </tbody>
 </table>
