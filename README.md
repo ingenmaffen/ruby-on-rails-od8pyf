@@ -15,7 +15,7 @@ Rails version: 2.3.1
 Database: SQLite3
 
 Used gems: 
-* 
-*
-*
-*
+* Bootstrap
+* CanCanCan
+* CarrierWave
+* Ransack
