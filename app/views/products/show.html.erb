@@ -12,7 +12,12 @@
   <%= @product.price %>
 </p>
 
-<img src= <%= @product.images %> />
+<% if @product.images.present? %>
+  <img src= <%= @product.images %> />
+<% else %>
+  <%= image_tag "no_image.png" %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

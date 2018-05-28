@@ -1,36 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="product-container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+  <div class="products-title">Products</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @products.each do |product| %>
-    <div style="margin: 5px; padding: 5px; background-color: #E6E6E6; position: relative;">
+    <div class="product">
       <h2><%= product.name %></h2>
-      <strong style="white-space: pre-line;">
-        <%= product.description %>
-      </strong>
 
-      <p style="white-space: pre-line;">
+      <div class="image">
+      <% if product.images.present? %>
+        <img src= <%= product.images %> />
+      <% else %>
+        <%= image_tag "no_image.png" %>
+      <% end %>
+      </div>
+
+      <div class="price">
         <%= product.price %> Ft
-      </p>
-      <img src= <%= product.images %> />
-      <span style="position: absolute; top: 0; right: 0;">
-        <span><%= link_to 'Open product', product %></span>
-        <span><%= link_to 'Edit product', edit_product_path(product) %></span>
-        <span><%= link_to 'Delete product', product, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-      </span>
+      </div>
+
     </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+</div>
