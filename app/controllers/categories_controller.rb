@@ -10,6 +10,8 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true)
   end
 
   # GET /categories/new

@@ -18,6 +18,6 @@ Used gems:
 * Bootstrap
 * CanCanCan (currently not used)
 * CarrierWave
-* Ransack (currently not used)
+* Ransack
 * Jquery Rails
 * SimpleCov
