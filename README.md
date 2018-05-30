@@ -20,3 +20,4 @@ Used gems:
 * CarrierWave
 * Ransack (currently not used)
 * Jquery Rails
+* SimpleCov
